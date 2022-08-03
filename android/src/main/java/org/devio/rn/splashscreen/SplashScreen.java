@@ -93,7 +93,7 @@ public class SplashScreen {
     });
   }
 
-  public static void isShowing(Promise promise) {
+  public static void isFinished(Promise promise) {
     promise.resolve(isAnimationFinished);
   }
 

@@ -87,8 +87,14 @@ RCT_EXPORT_MODULE(SplashScreen)
   [RNSplashScreen hide];
 }
 
++ (void)isFinished:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject {
+    resolve(@(isAnimationFinished));
+}
+
 RCT_EXPORT_METHOD(hide) { [RNSplashScreen hide]; }
 
 RCT_EXPORT_METHOD(show) { [RNSplashScreen show]; }
+
+RCT_EXPORT_METHOD(isFinished) { [RNSplashScreen isFinished]; }
 
 @end

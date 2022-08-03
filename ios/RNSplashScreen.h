@@ -15,4 +15,5 @@
 + (void)show;
 + (void)setAnimationFinished:(Boolean)flag;
 + (void)hide;
++ (void)isFinished:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject;
 @end

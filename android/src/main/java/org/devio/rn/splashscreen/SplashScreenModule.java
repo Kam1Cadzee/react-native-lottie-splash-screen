@@ -32,7 +32,7 @@ public class SplashScreenModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void isShowing(Promise promise) {
-    SplashScreen.isShowing(promise);
+  public void isFinished(Promise promise) {
+    SplashScreen.isFinished(promise);
   }
 }
