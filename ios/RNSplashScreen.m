@@ -12,6 +12,7 @@
 
 static bool waiting = true;
 static bool isAnimationFinished = false;
+static bool isAnimationFinished2 = false;
 static bool addedJsLoadErrorObserver = false;
 static UIView* loadingView = nil;
 
@@ -63,6 +64,7 @@ RCT_EXPORT_MODULE(SplashScreen)
   } else {
     waiting = true;
       if (isAnimationFinished) {
+        isAnimationFinished2 = true;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)),
                        dispatch_get_main_queue(), ^{
                          [loadingView removeFromSuperview];
@@ -87,14 +89,13 @@ RCT_EXPORT_MODULE(SplashScreen)
   [RNSplashScreen hide];
 }
 
-+ (void)isFinished:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject {
-    resolve(@(isAnimationFinished));
-}
-
 RCT_EXPORT_METHOD(hide) { [RNSplashScreen hide]; }
 
 RCT_EXPORT_METHOD(show) { [RNSplashScreen show]; }
 
-RCT_EXPORT_METHOD(isFinished) { [RNSplashScreen isFinished]; }
+RCT_EXPORT_METHOD(isFinished:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject) {
+    resolve(@(isAnimationFinished2));
+}
 
 @end
