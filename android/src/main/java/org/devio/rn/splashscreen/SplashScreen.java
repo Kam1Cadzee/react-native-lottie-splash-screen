@@ -1,5 +1,6 @@
 package org.devio.rn.splashscreen;
 
+import com.facebook.react.bridge.Promise;
 import android.animation.Animator;
 import android.app.Activity;
 import android.app.Dialog;
