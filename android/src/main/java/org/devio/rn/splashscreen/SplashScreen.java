@@ -46,6 +46,7 @@ public class SplashScreen {
             @Override
             public void onAnimationEnd(Animator animation) {
               SplashScreen.setAnimationFinished(true);
+              SplashScreen.hide(activity);
             }
 
             @Override
