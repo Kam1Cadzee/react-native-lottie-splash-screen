@@ -92,6 +92,10 @@ public class SplashScreen {
     });
   }
 
+  public static void isShowing(Promise promise) {
+    promise.resolve(isAnimationFinished);
+  }
+
   public static void show(final Activity activity, int lottieId) {
     int resourceId = R.style.SplashScreen_SplashTheme;
     show(activity, resourceId, lottieId);
