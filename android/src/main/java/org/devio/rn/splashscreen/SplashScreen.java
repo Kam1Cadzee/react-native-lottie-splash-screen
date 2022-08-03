@@ -20,6 +20,7 @@ public class SplashScreen {
   private static Dialog mSplashDialog;
   private static WeakReference<Activity> mActivity;
   private static Boolean isAnimationFinished = false;
+  private static Boolean isAnimationFinished2 = false;
   private static Boolean waiting = false;
 
   /**
@@ -94,7 +95,7 @@ public class SplashScreen {
   }
 
   public static void isFinished(Promise promise) {
-    promise.resolve(isAnimationFinished);
+    promise.resolve(isAnimationFinished2);
   }
 
   public static void show(final Activity activity, int lottieId) {
@@ -131,6 +132,7 @@ public class SplashScreen {
           }
 
           if (!_activity.isFinishing() && !isDestroyed && isAnimationFinished) {
+            isAnimationFinished2 = true;
             mSplashDialog.dismiss();
             mSplashDialog = null;
           }
